@@ -32,5 +32,21 @@ public class App {
               return new ModelAndView(model, layout);
             }, new VelocityTemplateEngine());
 
+        post("/squads", (request, response) -> {
+              Map<String, Object> model = new HashMap<String, Object>();
+              String name = request.queryParams("squadName");
+              String description = request.queryParams("description");
+              Squad newSquad = new Squad(name, description);
+              model.put("template", "templates/Squad_success.vtl");
+              return new ModelAndView(model, layout);
+            }, new VelocityTemplateEngine());
+
+        get("/squads", (request, response) -> {
+                Map<String, Object> model = new HashMap<String, Object>();
+                model.put("squads", Squad.all());
+                model.put("template", "templates/squads.vtl");
+                return new ModelAndView(model, layout);
+              }, new VelocityTemplateEngine());
+
     }
 }
