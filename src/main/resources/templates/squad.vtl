@@ -1,0 +1,12 @@
+<h1>$squad.getSquadName() heroes:</h1>
+<h2>$squad.getDescription()</h2>
+
+<ul>
+  #foreach($hero in $squad.getName())
+  <li><a href="/heroes/$hero.getId">$hero.getName()</a>
+  #end
+  </ul>
+
+  <a class="btn btn-outline-dark" href="/squads/$squad.getId()/form/new">Add a new Hero Here</a>
+  <a class="btn btn-outline-dark" href="/squads">View All squads</a>
+  <a class="btn btn-outline-success" href="/heroes">View All Heroes</a>
