@@ -77,19 +77,3 @@ public class VelocityTemplateEngine extends TemplateEngine {
     }
 
 }
-layout.vtl File
-We can also create our basic layout.vtl file now. Remember, as we learned in this lesson (Links to an external site.)Links to an external site. this is the basic HTML that will be loaded for every page of our application. It contains the standard HTML tags, a link to Bootstrap, and the line #parse( $template ) where the Velocity Template Engine will render the unique HTML individual pages:
-
-to-do/src/main/resources/templates/layout.vtl
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>To Do List</title>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-  </head>
-  <body>
-    <div class="container">
-      #parse( $template )
-    </div>
-  </body>
-</html>
