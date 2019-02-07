@@ -26,18 +26,18 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
-        get("/squads/new", (request, response) -> {
-              Map<String, Object> model = new HashMap<String, Object>();
-              model.put("template", "templates/squad_form.vtl");
-              return new ModelAndView(model, layout);
-            }, new VelocityTemplateEngine());
+        // get("/squads/new", (request, response) -> {
+        //       Map<String, Object> model = new HashMap<String, Object>();
+        //       model.put("template", "templates/squad_form.vtl");
+        //       return new ModelAndView(model, layout);
+        //     }, new VelocityTemplateEngine());
 
         post("/squads", (request, response) -> {
               Map<String, Object> model = new HashMap<String, Object>();
               String name = request.queryParams("squadName");
               String description = request.queryParams("description");
               Squad newSquad = new Squad(name, description);
-              model.put("template", "templates/Squad_success.vtl");
+              model.put("template", "templates/squad_success.vtl");
               return new ModelAndView(model, layout);
             }, new VelocityTemplateEngine());
 
@@ -62,6 +62,14 @@ public class App {
                   model.put("template", "templates/squad.vtl");
                   return new ModelAndView(model, layout);
                 }, new VelocityTemplateEngine());
+
+        get("squads/:id/form/new", (request, response) -> {
+           Map<String, Object> model = new HashMap<String, Object>();
+           Squad squad = Squad.find(Integer.parseInt(request.params(":id")));
+           model.put("squad", squad);
+           model.put("template", "templates/form.vtl");
+           return new ModelAndView(model, layout);
+       }, new VelocityTemplateEngine());
 
         get("/heroes", (request,response) -> {
          Map<String, Object> model = new HashMap<String, Object>();
