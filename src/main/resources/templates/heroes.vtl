@@ -1,0 +1,24 @@
+<div class="container heroes">
+#if ($heroes)
+  <h1 id="viewOne"> View Heroes </h1>
+  <ul>
+  #foreach ($hero in $heroes)
+  <div class="card cardOne">
+  <li>
+  <h2>$hero.getName()</h2><br>
+  $hero.getAge()<br>
+  $hero.getPower()<br>
+  $hero.getWeakness()
+  </li>
+  </div>
+  #end
+  </ul>
+#else
+  <p>No heroes!</p>
+#end
+
+
+<a class="btn btn-outline-dark" href="/">Back to Home</a>
+#*<a class="btn btn-outline-dark" href="/squads/$squad.getId()/form/new">Add New HSero</a>*#
+<a  class="btn btn-outline-success" href="/squads">View Your Squads Here</a>
+</div>

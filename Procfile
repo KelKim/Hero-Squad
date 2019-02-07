@@ -1,0 +1,1 @@
+web: ./build/install/Hero_Squad/bin/todo
