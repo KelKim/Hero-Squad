@@ -9,7 +9,7 @@ public class Squad {
     private List<Hero> mHeroes;
 
 
-    public Squad (String squadName, String description){
+    public Squad (String squadName, String description ){
         mSquadName = squadName;
         mDescription= description;
         instances.add(this);
