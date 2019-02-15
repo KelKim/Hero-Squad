@@ -13,8 +13,12 @@ Kelvin Kimathi
  * Internet connection 
 
 ## Installation
-* Clone or download the repository from https://github.com/KelKim/Ceaser-Cypher
-* Run the application through the terminal with the command gradle run
+  * Install Git on you machine
+  * Move to 'clone or download' button and get the link
+  * --Linux Users-- open your terminal and run the 'git clone ...' command in your directory
+  * --for Windows Users-- Navigate to the location you want the repository located, right click and select "git bash here"
+  * Clone the repository
+  * On completion, navigate to the cloned repository and feel free to edit the files
 
 ## Technologies used
 * Gradle
@@ -23,3 +27,4 @@ Kelvin Kimathi
 * HTML
 * CSS & Bootstrap
 * Junit
+* Spark

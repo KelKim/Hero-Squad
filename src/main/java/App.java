@@ -26,7 +26,7 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
-        get("/squad_form/new", (request, response) -> {
+        get("/squads/new", (request, response) -> {
               Map<String, Object> model = new HashMap<String, Object>();
               model.put("template", "templates/squad_form.vtl");
               return new ModelAndView(model, layout);
